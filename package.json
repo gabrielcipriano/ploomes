@@ -1,0 +1,33 @@
+{
+  "name": "ploomes",
+  "version": "0.1.0",
+  "description": "A Ploomes API Library for TypeScript and JavaScript applications, compatible with Node.js and web browser for easy interaction with the Ploomes API.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.3.4"
+  },
+  "engines": {
+    "node": "^18.14",
+    "npm": "^9.3"
+  },
+  "keywords": [
+    "ploomes",
+    "client",
+    "api",
+    "node",
+    "sdk"
+  ],
+  "author": "Gabriel Cipriano",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielcipriano/ploomes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gabrielcipriano/ploomes/issues"
+  },
+  "homepage": "https://github.com/gabrielcipriano/ploomes#readme"
+}
