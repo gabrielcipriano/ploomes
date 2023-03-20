@@ -1,6 +1,6 @@
 {
   "name": "ploomes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Ploomes API Library for TypeScript and JavaScript applications, compatible with Node.js and web browser for easy interaction with the Ploomes API.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
