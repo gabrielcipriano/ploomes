@@ -16,17 +16,11 @@ export class AxiosAdapter implements HttpProvider {
   }
 
   post<T, D = any>(url: string, config?: RequestConfig<any>): Promise<Response<T>> {
-    return this.axios.post(url, {
-      params: config?.params,
-      data: config?.body
-    })
+    return this.axios.post(url, config?.body, { params: config?.params })
   }
 
   patch<T, D = any>(url: string, config?: RequestConfig<any>): Promise<Response<T>> {
-    return this.axios.patch(url, {
-      params: config?.params,
-      data: config?.body
-    })
+    return this.axios.patch(url, config?.body, { params: config?.params })
   }
 
   delete<T, D = any>(url: string, config?: RequestConfig<any>): Promise<Response<T>> {
