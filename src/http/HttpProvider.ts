@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 export type RequestConfig<B = any> = {
   /** `body` is the data to be sent as the request body
