@@ -1,5 +1,11 @@
 # ploomes
 
+## 0.0.3
+
+### Patch Changes
+
+- 9206ab1: eslint to enforce code rules & styling
+
 ## 0.0.2
 
 ### Patch Changes
