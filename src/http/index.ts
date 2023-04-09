@@ -1,2 +1,2 @@
-export type * from './HttpProvider'
-export * from './AxiosAdapter'
+export type * from './HttpProvider';
+export * from './AxiosAdapter';
