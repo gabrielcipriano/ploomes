@@ -5,29 +5,41 @@ import { HttpProvider, HttpDefaults, RequestConfig, Response } from './HttpProvi
 export class AxiosAdapter implements HttpProvider {
   axios: AxiosInstance;
 
-  constructor(defaults: HttpDefaults) {
-    const { baseURL, timeout, commonHeaders } = defaults || {};
+  constructor(defaults: HttpDefaults = {}) {
+    const { baseURL, timeout, commonHeaders } = defaults;
     this.axios = axios.create({baseURL, timeout, headers: commonHeaders});
   }
 
-  get<B, R = any>(url: string, config?: RequestConfig<B>): Promise<Response<R>> {
-    return this.axios.get(url, {
-      params: config?.params
-    });
-  }
+  // get<B, R = any>(url: string, config?: RequestConfig<B>): Promise<Response<R>> {
+  //   return this.axios.get(url, {
+  //     params: config?.params
+  //   });
+  // }
 
-  post<B, R = any>(url: string, config?: RequestConfig<B>): Promise<Response<R>> {
-    return this.axios.post(url, config?.body, { params: config?.params });
-  }
+  // post<B, R = any>(url: string, config?: RequestConfig<B>): Promise<Response<R>> {
+  //   return this.axios.post(url, config?.body, { params: config?.params });
+  // }
 
-  patch<B, R = any>(url: string, config?: RequestConfig<B>): Promise<Response<R>> {
-    return this.axios.patch(url, config?.body, { params: config?.params });
-  }
+  // patch<B, R = any>(url: string, config?: RequestConfig<B>): Promise<Response<R>> {
+  //   return this.axios.patch(url, config?.body, { params: config?.params });
+  // }
 
-  delete<B, R = any>(url: string, config?: RequestConfig<B>): Promise<Response<R>> {
-    return this.axios.delete(url, {
-      params: config?.params,
-      data: config?.body
-    });
+  // delete<B, R = any>(url: string, config?: RequestConfig<B>): Promise<Response<R>> {
+  //   return this.axios.delete(url, {
+  //     params: config?.params,
+  //     data: config?.body
+  //   });
+  // }
+  get<D = never, R = any>(url: string, config?: RequestConfig<D>): Promise<Response<R>> {
+    return this.axios.get(url, { params: config?.params });
+  }
+  post<D = any, R = any>(url: string, config?: RequestConfig<D>): Promise<Response<R>> {
+    return this.axios.post(url, config?.data, { params: config?.params, data: config?.data });
+  }
+  patch<D = any, R = any>(url: string, config?: RequestConfig<D>): Promise<Response<R>> {
+    return this.axios.patch(url, config?.data, { params: config?.params, data: config?.data });
+  }
+  delete<D = any, R = any>(url: string, config?: RequestConfig<D>): Promise<Response<R>> {
+    return this.axios.delete(url, { params: config?.params, data: config?.data });
   }
 }
